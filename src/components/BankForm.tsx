@@ -2,6 +2,7 @@
 import React from "react";
 import Modal from "./Modal";
 import { useState } from "react";
+import Link from "next/link";
 
 const BankForm = () => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -41,8 +42,8 @@ const BankForm = () => {
   return (
     <div
       onClick={handleDivClick}
-      className="flex justify-center items-center h-screen bg-[#0d002c] text-white">
-      <form className=" w-1/3 p-8 bg-[#2c0099] rounded-2xl ">
+      className="flex justify-center items-center h-screen bg-[#6f29cc] text-white">
+      <form className=" w-1/3 p-8 bg-[#7c1974] rounded-2xl ">
         <h1 className=" text-3xl block text-center font-semibold ">
           Requesting a Loan
         </h1>
@@ -116,12 +117,17 @@ const BankForm = () => {
           onClick={handleFormSubmit}
           disabled={btnIsDs}
           className={`${
-            btnIsDs ? "bg-gray-500" : "bg-[#3DC2EC]"
+            btnIsDs ? "bg-gray-500" : "bg-[#7c1974]"
           } w-20 relative left-60 mt-6  p-2 rounded-md`}>
           Submit
         </button>
       </form>
       <Modal errorMessage={errorMessage} isVisible={showModal} />
+      <Link
+        className=" absolute  top-0 left-52 bg-[#3DC2EC] py-2 px-6 rounded-md"
+        href="/test">
+        test page
+      </Link>
     </div>
   );
 };
